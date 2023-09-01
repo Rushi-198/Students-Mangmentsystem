@@ -1,0 +1,37 @@
+<div class="table-responsive">
+    <table class="table table-bordered table-dark">
+        <thead>
+            <tr>
+                <td>Sr No.</td>
+                <td>First Name</td>
+                <td>Last Name</td>
+                <td>Gender</td>
+                <td>Email</td>
+                <td>Contact</td>
+                <td>Roll No.</td>
+                <td>Edit</td>
+                <td>Delete</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let s of studentArr, index as i">
+                <td>{{i + 1}}</td>
+                <td>{{s.Fname}}</td>
+                <td>{{s.Lname}}</td>
+                <td>{{s.Gender}}</td>
+                <td>{{s.Email}}</td>
+                <td>{{s.Contact}}</td>
+                <td>{{s.Rollno}}</td>
+
+                <td> <button mat-mini-fab color="primary" aria-label="Example icon button with a edit icon"
+                        (click)="onEdit(s)">
+                        <mat-icon>edit</mat-icon>
+                    </button></td>
+                <td> <button mat-mini-fab color="warn" aria-label="Example icon button with a delete icon"
+                        (click)="ondelete(s.id!)">
+                        <mat-icon>delete</mat-icon>
+                    </button></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
